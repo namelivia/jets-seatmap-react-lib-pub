@@ -42,6 +42,8 @@ export default [
             },
           ],
           '@babel/plugin-proposal-class-properties',
+          '@babel/plugin-transform-optional-chaining',
+          '@babel/plugin-transform-nullish-coalescing-operator',
           [
             'search-and-replace',
             {
