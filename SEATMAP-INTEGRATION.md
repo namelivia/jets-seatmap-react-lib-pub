@@ -89,7 +89,7 @@ Create your [config](#config) and embed seatmap into your component page via `<J
     - [ onSeatUnselected](#-onseatunselected)
     - [ onSeatMouseLeave](#-onseatmouseleave)
     - [ onSeatMouseClick](#-onseatmouseclick)
-    
+    - [Advanced: Overriding Components](#advanced-overriding-components)
 
 The `flight` prop is requred.
 

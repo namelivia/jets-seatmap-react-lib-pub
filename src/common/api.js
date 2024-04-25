@@ -10,7 +10,7 @@ export class JetsApiService {
   }
 
   getData = async (url, options = {}) => {
-    const basicOptions = {};
+    let basicOptions = {};
     if (!options?.headers?.authorization) {
       basicOptions = await this._getRequestOptions();
     }
