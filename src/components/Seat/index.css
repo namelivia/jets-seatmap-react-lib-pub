@@ -5,6 +5,8 @@
   align-items: center;
   position: relative;
   float: left;
+  pointer-events: auto;
+  touch-action: auto;
 }
 
 .jets-unavailable {

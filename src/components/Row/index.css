@@ -1,3 +1,5 @@
 .jets-row {
   position: absolute;
+  pointer-events: none;
+  touch-action: none;
 }
