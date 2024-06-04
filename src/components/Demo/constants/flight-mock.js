@@ -78,7 +78,7 @@ const FLIGHT_MOCK8 = {
   id: '111',
   airlineCode: 'LH',
   flightNo: '424',
-  departureDate: '2023-09-30',
+  departureDate: '2024-09-30',
   departure: 'MUC',
   arrival: 'BOS',
   cabinClass: 'E',
@@ -86,21 +86,24 @@ const FLIGHT_MOCK8 = {
 };
 
 const FLIGHT_MOCK = {
-  id: '111',
-  airlineCode: 'LH',
-  flightNo: '400',
-  departureDate: '2023-10-04',
-  departure: 'FRA',
-  arrival: 'JFK',
+  id: '1',
+  airlineCode: 'NK',
+  flightNo: '119',
+  departureDate: '2024-06-23',
+  departure: 'DFW',
+  arrival: 'BNA',
   cabinClass: 'E',
+  passengerType: 'ADT',
   planeCode: '',
+  startRow: 1,
+  endRow: 30,
 };
 
 const FLIGHT_MOCK10 = {
   id: '111',
   airlineCode: 'LH',
   flightNo: '1381',
-  departureDate: '2023-09-30',
+  departureDate: '2024-09-30',
   departure: 'POZ',
   arrival: 'FRA',
   cabinClass: 'E',
