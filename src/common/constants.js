@@ -113,7 +113,7 @@ export const FUSELAGE_HEIGHT_TO_WIDTH_RATIO = 2.4;
 export const SEAT_SIZE_BY_TYPE = [
   [100, 100],
   [122, 218],
-  [160, 180],
+  [150, 170],
   [100, 100],
   [122, 200],
   [200, 200],
