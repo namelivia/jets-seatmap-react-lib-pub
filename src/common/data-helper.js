@@ -3,6 +3,7 @@ import {
   THEME_FUSELAGE_OUTLINE_WIDTH,
   FUSELAGE_HEIGHT_TO_WIDTH_RATIO,
   ENTITY_TYPE_MAP,
+  SCALE_TYPES,
 } from './constants';
 
 export class JetsDataHelper {
@@ -16,7 +17,12 @@ export class JetsDataHelper {
     const isWingsExist = Math.max(...decksWings) > 0;
 
     const scaleCoefs = this._calculateSeatMapScale(maxDeckWidth, config.width);
-    const rotationCoefs = this._calculateSeatMapRotation(config.horizontal, config.rightToLeft, scaleCoefs.scale);
+    const rotationCoefs = this._calculateSeatMapRotation(
+      config.horizontal,
+      config.rightToLeft,
+      scaleCoefs.scale,
+      config.scaleType
+    );
 
     // hardcoded 2.4 from tail and nose proportions
     const hullSize = config.visibleFuselage ? maxDeckWidth * FUSELAGE_HEIGHT_TO_WIDTH_RATIO : 0;
@@ -49,6 +55,7 @@ export class JetsDataHelper {
 
       visibleFuselage: config.visibleFuselage,
       visibleWings: config.visibleWings && isWingsExist,
+      visibleCabinTitles: config.visibleCabinTitles,
       scaledTotalDecksHeight: totalDecksHeight ? `${totalDecksHeight * (scaleCoefs.scale || 1)}px` : '100%',
     };
   };
@@ -59,8 +66,9 @@ export class JetsDataHelper {
 
   getDeckInnerWidthWithWings(deck, isWingsExist, config) {
     const wingsSpace = config?.visibleWings && isWingsExist ? config.colorTheme.wingsWidth : 0;
+    const cabinTitlesSpace = config?.visibleCabinTitles ? config.colorTheme.cabinTitlesWidth : 0;
 
-    return deck.width + wingsSpace * 2;
+    return deck.width + Math.max(wingsSpace, cabinTitlesSpace) * 2;
   }
 
   findWidestDeckRow = rows => {
@@ -124,7 +132,7 @@ export class JetsDataHelper {
     return SEAT_SIZE_BY_CLASS[classCode];
   };
 
-  _calculateSeatMapRotation = (isHorizontal, isRtl, scale) => {
+  _calculateSeatMapRotation = (isHorizontal, isRtl, scale, scaleType) => {
     let rotation = '';
     let offset = '';
     let antiRotation = '';
@@ -132,7 +140,7 @@ export class JetsDataHelper {
     // RTL\LTR handled differently afterwards
     if (isHorizontal) {
       rotation = 'rotate(90deg)';
-      offset = 'translateY(-100%)';
+      offset = scaleType === SCALE_TYPES.ZOOM ? `translateY(${-100 / scale}%)` : `translateY(-100%)`;
       antiRotation = 'rotate(-90deg)';
     }
 

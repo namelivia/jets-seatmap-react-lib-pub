@@ -1,4 +1,8 @@
 export const LOCALE_PL = {
+  F: 'Pierwsza klasa',
+  B: 'Klasa biznes',
+  P: 'Klasa premium',
+  E: 'Klasa ekonomiczna',
   audio_video_ondemand: 'Audio i wideo na żądanie (%s)',
   audioVideo: 'Audio i wideo na żądanie (%s)',
   babyBassinet: 'Dostępne łóżeczko dziecięce',
@@ -35,9 +39,15 @@ export const LOCALE_PL = {
   wifi_enabled: 'Wi-Fi włączone',
   wifiEnabled: 'Wi-Fi włączone',
   wingInWindow: 'Skrzydło z okna',
+  narrower: 'Węższe siedzisko',
+  exitRow: 'Rząd wyjściowy',
 };
 
 export const LOCALE_ES = {
+  F: 'Primera clase',
+  B: 'Clase Business',
+  P: 'Clase superior',
+  E: 'Clase turista',
   audio_video_ondemand: 'Audio y video bajo demanda (%s)',
   audioVideo: 'Audio y video bajo demanda (%s)',
   babyBassinet: 'Moisés para bebé disponible',
@@ -74,21 +84,27 @@ export const LOCALE_ES = {
   wifi_enabled: 'Wi-Fi habilitado',
   wifiEnabled: 'Wi-Fi habilitado',
   wingInWindow: 'Vista del ala desde la ventana',
+  narrower: 'Asiento más estrecho',
+  exitRow: 'Fila de salida',
 };
 
 export const LOCALE_DE = {
+  F: 'Erste Klasse',
+  B: 'Business-Klasse',
+  P: 'Premiumklasse',
+  E: 'Economy-Klasse',
   audio_video_ondemand: 'Audio & Video nach Anfrage (%s)',
   audioVideo: 'Audio & Video nach Anfrage (%s)',
   babyBassinet: 'Babywiege vorhanden',
   bassinet: 'Babywiege vorhanden',
   cancel: 'Aufheben',
   deck: 'Deck',
-  doNotRecline: 'Umklappen der Rückenlehne nicht möglich, Rückenschmerzen beachten',
+  doNotRecline: 'Eingeschränkte Liegeposition, Rückenschmerzen möglich',
   extraLegroom: 'Mehr Beinfreiheit',
   getColdByExit: 'Nah zum Ausgang, Zugluft, kalt',
   invertedSeat: 'Nach hinten gerichteter Sitz',
   limitedOverheadStorage: 'Stauraum in den oberen Gepäckfächern begrenzt',
-  limitedRecline: 'Umklappen der Rückenlehne nur eingeschränkt möglich, Rückenschmerzen beachten',
+  limitedRecline: 'Eingeschränkte Liegeposition, Rückenschmerzen möglich',
   misalignedWindow: 'Teil- oder fehlende Fensterblick',
   nearGalley: 'In der Nähe von der Bordküche',
   nearLavatory: 'In der Nähe von Toiletten',
@@ -114,9 +130,15 @@ export const LOCALE_DE = {
   wifi_enabled: 'Wi-Fi aktiviert',
   wifiEnabled: 'Wi-Fi aktiviert',
   wingInWindow: 'Flügelfenster',
+  narrower: 'Engerer Sitz',
+  exitRow: 'Ausstiegsreihe',
 };
 
 export const LOCALE_EN = {
+  F: 'First class',
+  B: 'Business class',
+  P: 'Premium class',
+  E: 'Economy class',
   ADT: 'adults',
   audio_video_ondemand: 'Audio & Video On Demand',
   audioVideo: 'Audio & Video On Demand',
@@ -160,9 +182,15 @@ export const LOCALE_EN = {
   wifi_enabled: 'WiFi enabled',
   wifiEnabled: 'WiFi enabled',
   wingInWindow: 'Wing from window view',
+  narrower: 'Narrower seat',
+  exitRow: 'Exit row',
 };
 
 export const LOCALE_CN = {
+  F: '头等舱',
+  B: '商务舱',
+  P: '特等舱',
+  E: '经济舱',
   restrictedLegroom: '腿部空间较小',
   extraLegroom: '腿部空间较大',
   noFloorStorage: '前面无座位',
@@ -200,9 +228,15 @@ export const LOCALE_CN = {
   deck: '甲板',
   personalTvInArmrest: '扶手里的个人电视',
   invertedSeat: '倒座',
+  narrower: '较窄的座椅',
+  exitRow: '出口行',
 };
 
 export const LOCALE_RU = {
+  F: 'Первый класс',
+  B: 'Бизнес-класс',
+  P: 'Премиум-класс',
+  E: 'Эконом-класс',
   restrictedLegroom: 'Мало места для ног',
   extraLegroom: 'Много места для ног',
   noFloorStorage: 'Нет места для ручной клади под сиденьем',
@@ -240,9 +274,15 @@ export const LOCALE_RU = {
   deck: 'Этаж',
   personalTvInArmrest: 'Персональный телевизор в подлокотнике',
   invertedSeat: 'Сиденье заднего хода',
+  narrower: 'Более узкое сиденье',
+  exitRow: 'Ряд возле выхода',
 };
 
 export const LOCALE_AR = {
+  F: 'الدرجة الأولى',
+  B: 'درجة رجال الأعمال',
+  P: 'الفئة الممتازة',
+  E: 'الدرجة الاقتصادية',
   ADT: 'بالغين',
   audio_video_ondemand: 'الصوت والفيديو حسب الطلب',
   audioVideo: 'الصوت والفيديو حسب الطلب',
@@ -286,9 +326,15 @@ export const LOCALE_AR = {
   wifi_enabled: 'واي فاي مفعل',
   wifiEnabled: 'واي فاي مفعل',
   wingInWindow: 'جناح من نافذة العرض',
+  narrower: 'مقعد أضيق',
+  exitRow: 'صف الخروج',
 };
 
 export const LOCALE_CS = {
+  F: 'První třída',
+  B: 'Třída Business',
+  P: 'Třída Premium',
+  E: 'Ekonomická třída',
   ADT: 'dospělí',
   audio_video_ondemand: 'Audio & Video na vyžádání',
   audioVideo: 'Audio & Video na vyžádání',
@@ -332,9 +378,15 @@ export const LOCALE_CS = {
   wifi_enabled: 'WiFi povoleno',
   wifiEnabled: 'WiFi povoleno',
   wingInWindow: 'Křídlo z okenního výhledu',
+  narrower: 'užší sedadlo',
+  exitRow: 'Výstupní řada',
 };
 
 export const LOCALE_FR = {
+  F: 'Première classe',
+  B: 'Classe affaires',
+  P: 'Classe Premium',
+  E: 'Classe économique',
   ADT: 'adultes',
   audio_video_ondemand: 'Audio & Vidéo à la demande',
   audioVideo: 'Audio & Vidéo à la demande',
@@ -378,9 +430,15 @@ export const LOCALE_FR = {
   wifi_enabled: 'WiFi activé',
   wifiEnabled: 'WiFi activé',
   wingInWindow: 'Vue de l’aile depuis la fenêtre',
+  narrower: 'Siège plus étroit',
+  exitRow: 'Rang de sortie',
 };
 
 export const LOCALE_PT = {
+  F: 'Primeira classe',
+  B: 'Classe executiva',
+  P: 'Classe Premium',
+  E: 'Classe económica',
   ADT: 'adultos',
   audio_video_ondemand: 'Áudio & Vídeo Sob Demanda',
   audioVideo: 'Áudio & Vídeo Sob Demanda',
@@ -424,9 +482,15 @@ export const LOCALE_PT = {
   wifi_enabled: 'WiFi habilitado',
   wifiEnabled: 'WiFi habilitado',
   wingInWindow: 'Vista da asa da janela',
+  narrower: 'Assento mais estreito',
+  exitRow: 'Fila de saída',
 };
 
 export const LOCALE_IT = {
+  F: 'Prima classe',
+  B: 'Classe business',
+  P: 'Classe Premium',
+  E: 'Classe economica',
   ADT: 'adulti',
   audio_video_ondemand: 'Audio & Video su richiesta',
   audioVideo: 'Audio & Video su richiesta',
@@ -470,9 +534,15 @@ export const LOCALE_IT = {
   wifi_enabled: 'WiFi abilitato',
   wifiEnabled: 'WiFi abilitato',
   wingInWindow: 'Ala vista dalla finestra',
+  narrower: 'Sedile più stretto',
+  exitRow: 'Fila di uscita',
 };
 
 export const LOCALE_UK = {
+  F: 'Перший клас',
+  B: 'Бізнес-клас',
+  P: 'Преміум-клас',
+  E: 'Економ-клас',
   ADT: 'дорослі',
   audio_video_ondemand: 'Аудіо та відео за запитом',
   audioVideo: 'Аудіо та відео за запитом',
@@ -516,9 +586,15 @@ export const LOCALE_UK = {
   wifi_enabled: 'WiFi увімкнено',
   wifiEnabled: 'WiFi увімкнено',
   wingInWindow: 'Вигляд крила з вікна',
+  narrower: 'Вужче сидіння',
+  exitRow: 'Ряд біля виходу',
 };
 
 export const LOCALE_JA = {
+  F: 'ファーストクラス',
+  B: 'ビジネスクラス',
+  P: 'プレミアムクラス',
+  E: 'エコノミークラス',
   ADT: '大人',
   audio_video_ondemand: 'オンデマンドのオーディオ＆ビデオ',
   audioVideo: 'オンデマンドのオーディオ＆ビデオ',
@@ -562,9 +638,15 @@ export const LOCALE_JA = {
   wifi_enabled: 'WiFi有効',
   wifiEnabled: 'WiFi有効',
   wingInWindow: '窓からの翼の眺め',
+  narrower: '狭いシート',
+  exitRow: '出口列',
 };
 
 export const LOCALE_KO = {
+  F: '퍼스트 클래스',
+  B: '비즈니스 클래스',
+  P: '프리미엄 클래스',
+  E: '이코노미 클래스',
   ADT: '성인',
   audio_video_ondemand: '요청 시 오디오 및 비디오',
   audioVideo: '요청 시 오디오 및 비디오',
@@ -608,9 +690,15 @@ export const LOCALE_KO = {
   wifi_enabled: 'WiFi 사용 가능',
   wifiEnabled: 'WiFi 사용 가능',
   wingInWindow: '창에서 날개 뷰',
+  narrower: '좁은 좌석',
+  exitRow: '행 종료',
 };
 
 export const LOCALE_TR = {
+  F: 'Birinci sınıf',
+  B: 'Business sınıfı',
+  P: 'Premium sınıf',
+  E: 'Ekonomi sınıfı',
   ADT: 'yetişkinler',
   audio_video_ondemand: 'Talebe Göre Ses & Video',
   audioVideo: 'Talebe Göre Ses & Video',
@@ -654,4 +742,6 @@ export const LOCALE_TR = {
   wifi_enabled: 'WiFi etkin',
   wifiEnabled: 'WiFi etkin',
   wingInWindow: 'Pencereden kanat görünümü',
+  narrower: 'Daha dar koltuk',
+  exitRow: 'Çıkış sırası',
 };

@@ -9,6 +9,7 @@ import {
   DEFAULT_HORIZONTAL_LAYOUT,
   DEFAULT_VISIBLE_HULL,
   DEFAULT_VISIBLE_WINGS,
+  DEFAULT_VISIBLE_CABIN_TITLES,
   DEFAULT_BUILT_IN_TOOLTIP,
   DEFAULT_EXTERNAL_PASSENGER_MANAGEMENT,
   DEFAULT_SHOW_DECK_SELECTOR,
@@ -16,6 +17,8 @@ import {
   DEFAULT_TOOLTIP_ON_HOVER,
   DEFAULT_RTL,
   DEFAULT_UNITS,
+  DEFAULT_SCALE_TYPE,
+  SCALE_TYPES,
   JetsContext,
   ENTITY_STATUS_MAP,
   ENTITY_TYPE_MAP,
@@ -53,6 +56,9 @@ import {
   THEME_DECK_SELECTOR_SIZE,
   THEME_FUSELAGE_OUTLINE_WIDTH,
   THEME_NOT_AVAILABLE_SEATS_COLOR,
+  THEME_CABIN_TITLES_WIDTH,
+  THEME_CABIN_TITLES_HIGHLIGHT_COLORS,
+  THEME_CABIN_TITLES_LABEL_COLOR,
 } from '../../common';
 import './index.css';
 import { JetsPlaneBody } from '../PlaneBody';
@@ -80,6 +86,12 @@ export const JetsSeatMap = ({
   );
   config.colorTheme = colorTheme;
   const configuration = { ...JetsSeatMap.defaultProps.config, ...config };
+
+  // SCALE_TYPES.ZOOM is not fully supported by FF
+  const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+  if (isFirefox) {
+    configuration.scaleType = SCALE_TYPES.SCALE;
+  }
 
   const [content, setContent] = useState([]);
   const [isSeatMapInited, setSeatMapInited] = useState(false);
@@ -293,6 +305,7 @@ export const JetsSeatMap = ({
       ...tooltipData,
       nextPassenger,
       lang: configuration.lang,
+      scaleType: configuration.scaleType,
       seatmapElement: seatMapRef.current,
     });
   };
@@ -335,11 +348,17 @@ export const JetsSeatMap = ({
     );
   };
 
-  const scaleTransformValue = ` ${params?.rotation} ${params?.offset} scale(${params?.scale})`;
-
   const scaleWrapStyle = {
-    transform: scaleTransformValue,
+    transform: ` ${params?.rotation} ${params?.offset} scale(${params?.scale})`,
     transformOrigin: 'top left',
+    width: params?.innerWidth,
+    height: params?.scaledTotalDecksHeight,
+  };
+
+  const zoomWrapStyle = {
+    transform: ` ${params?.rotation} ${params?.offset}`,
+    transformOrigin: 'top left',
+    zoom: params?.scale,
     width: params?.innerWidth,
     height: params?.scaledTotalDecksHeight,
   };
@@ -353,6 +372,7 @@ export const JetsSeatMap = ({
     isSeatSelectDisabled,
     switchDeck,
     params,
+    config: configuration,
     colorTheme,
     activeTooltip,
     componentOverrides,
@@ -371,7 +391,7 @@ export const JetsSeatMap = ({
       >
         {activeTooltip && <JetsTooltipGlobal data={activeTooltip} />}
         {shouldShowBuiltInDeckSelector && <JetsDeckSelector direction={!!activeDeck}></JetsDeckSelector>}
-        <div style={scaleWrapStyle}>
+        <div style={configuration.scaleType === SCALE_TYPES.SCALE ? scaleWrapStyle : zoomWrapStyle}>
           <JetsPlaneBody
             showOneDeck={shouldShowOnlyOneDeck}
             activeDeck={activeDeck}
@@ -394,6 +414,7 @@ JetsSeatMap.defaultProps = {
     rightToLeft: DEFAULT_RTL,
     visibleFuselage: DEFAULT_VISIBLE_HULL,
     visibleWings: DEFAULT_VISIBLE_WINGS,
+    visibleCabinTitles: DEFAULT_VISIBLE_CABIN_TITLES,
 
     builtInTooltip: DEFAULT_BUILT_IN_TOOLTIP,
     externalPassengerManagement: DEFAULT_EXTERNAL_PASSENGER_MANAGEMENT,
@@ -404,6 +425,7 @@ JetsSeatMap.defaultProps = {
     tooltipOnHover: DEFAULT_TOOLTIP_ON_HOVER,
     lang: DEFAULT_LANG,
     units: DEFAULT_UNITS,
+    scaleType: DEFAULT_SCALE_TYPE,
     colorTheme: {
       deckLabelTitleColor: THEME_DECK_LABEL_TITLE_COLOR,
       floorColor: THEME_FLOOR_COLOR,
@@ -450,6 +472,10 @@ JetsSeatMap.defaultProps = {
       deckSelectorSize: THEME_DECK_SELECTOR_SIZE,
       exitIconUrlLeft: null,
       exitIconUrlRight: null,
+
+      cabinTitlesWidth: THEME_CABIN_TITLES_WIDTH,
+      cabinTitlesHighlightColors: THEME_CABIN_TITLES_HIGHLIGHT_COLORS,
+      cabinTitlesLabelColor: THEME_CABIN_TITLES_LABEL_COLOR,
     },
   },
   onSeatMapInited: data => {

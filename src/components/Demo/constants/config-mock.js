@@ -6,6 +6,8 @@ const CONFIG_MOCK = {
 
   visibleFuselage: true,
   visibleWings: false,
+  visibleCabinTitles: true,
+  customCabinTitles: { F: 'First', B: 'Business', P: 'Premium', E: 'Economy' },
 
   builtInDeckSelector: true,
   singleDeckMode: true,
@@ -19,6 +21,8 @@ const CONFIG_MOCK = {
   apiUrl: process.env.JETS_BASE_API_URL,
   apiAppId: process.env.JETS_APP_ID,
   apiKey: process.env.JETS_PRIVATE_KEY,
+
+  scaleType: 'zoom',
 
   colorTheme: {
     deckLabelTitleColor: 'black',
@@ -67,6 +71,8 @@ const CONFIG_MOCK = {
 
     exitIconUrlLeft: 'https://panorama.quicket.io/icons/exit-left.svg',
     exitIconUrlRight: 'https://panorama.quicket.io/icons/exit-right.svg',
+
+    cabinTitlesWidth: 85,
   },
 };
 
