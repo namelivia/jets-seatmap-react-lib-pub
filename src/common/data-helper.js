@@ -238,7 +238,7 @@ export class JetsDataHelper {
 
   static _filterInvalidColors(theme) {
     Object.keys(theme).reduce((acc, key) => {
-      const isNamedAsColor = key.toLowerCase().includes('color');
+      const isNamedAsColor = key.toLowerCase().endsWith('color');
 
       if (!isNamedAsColor) {
         acc[key] = theme[key];
