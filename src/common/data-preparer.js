@@ -399,11 +399,16 @@ export class JetsContentPreparer {
   _prepareSeatFeatures = (seat, cabin, lang) => {
     const { pitch: cabinSeatPitch, width: cabinSeatWidth, recline: cabinSeatRecline, audioVideo, power, wifi } = cabin;
     const { pitch: seatPitch, width: seatWidth, recline: seatRecline } = seat || {};
+
+    const seatFeaturesKeys = Object.keys(seat.features || {});
+    const noReclineKeys = ['doNotRecline', 'limitedRecline', 'prereclinedSeat'];
+    const isSeatWithoutRecline = seatFeaturesKeys.some(key => noReclineKeys.includes(key));
+
     const features = { audioVideo, power, wifi, ...seat.features };
     const measurements = {
       pitch: seatPitch || cabinSeatPitch,
       width: seatWidth || cabinSeatWidth,
-      recline: seatRecline || cabinSeatRecline,
+      recline: isSeatWithoutRecline ? '- -' : seatRecline || cabinSeatRecline,
     };
 
     const prosOrCons = ['+', '-'];

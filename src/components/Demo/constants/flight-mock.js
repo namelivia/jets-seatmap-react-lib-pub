@@ -1,11 +1,11 @@
-const FLIGHT_MOCK0 = {
-  id: 'react-lib-test',
-  airlineCode: 'KU',
-  flightNo: '503',
-  departureDate: '2024-12-09',
-  departure: 'KWI',
-  arrival: 'BEY',
-  cabinClass: 'B',
+const FLIGHT_MOCK = {
+  id: '111',
+  airlineCode: 'DL',
+  flightNo: '695',
+  departureDate: '2024-07-21',
+  departure: 'BOS',
+  arrival: 'ATL',
+  cabinClass: 'A',
 };
 
 const FLIGHT_MOCK1 = {
@@ -108,7 +108,7 @@ const FLIGHT_MOCK9 = {
   endRow: 37,
 };
 
-const FLIGHT_MOCK = {
+const FLIGHT_MOCK10 = {
   id: '111',
   airlineCode: 'U2',
   flightNo: '204',
