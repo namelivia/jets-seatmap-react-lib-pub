@@ -5,8 +5,7 @@
   align-items: center;
   position: relative;
   float: left;
-  pointer-events: auto;
-  touch-action: auto;
+  z-index: 10;
 }
 
 .jets-unavailable {
@@ -109,6 +108,7 @@ svg {
   font-size: 36px;
   max-width: 192px;
   max-height: 192px;
+  z-index: 11;
 }
 
 .jets-seat-svg {
