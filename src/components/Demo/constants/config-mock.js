@@ -74,6 +74,7 @@ const CONFIG_MOCK = {
 
     cabinTitlesWidth: 85,
   },
+  // hiddenSeatFeatures: ['limitedRecline', 'getColdByExit', 'doNotRecline', 'wingInWindow', 'nearLavatory', 'nearGalley'],
 };
 
 export default CONFIG_MOCK;

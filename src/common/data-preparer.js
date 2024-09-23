@@ -160,7 +160,6 @@ export class JetsContentPreparer {
       // rowGroup.width = preparedBiggestDeckRow.width;
     }
 
-    // console.log('cabinClassWidths', cabinClassWidths);
     const sum = cabinClassWidths.reduce((acc, d) => acc + d, 0);
     const targetDeckWidth = sum / cabinClassWidths.length; // Math.avg(...cabinClassWidths);
     const firstElementOffset = this._getFirstElementDeckOffset(deck);

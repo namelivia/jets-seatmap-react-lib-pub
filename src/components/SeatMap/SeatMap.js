@@ -426,6 +426,7 @@ JetsSeatMap.defaultProps = {
     lang: DEFAULT_LANG,
     units: DEFAULT_UNITS,
     scaleType: DEFAULT_SCALE_TYPE,
+    hiddenSeatFeatures: [],
     colorTheme: {
       deckLabelTitleColor: THEME_DECK_LABEL_TITLE_COLOR,
       floorColor: THEME_FLOOR_COLOR,

@@ -57,6 +57,7 @@ export class JetsDataHelper {
       visibleWings: config.visibleWings && isWingsExist,
       visibleCabinTitles: config.visibleCabinTitles,
       scaledTotalDecksHeight: totalDecksHeight ? `${totalDecksHeight * (scaleCoefs.scale || 1)}px` : '100%',
+      hiddenSeatFeatures: config.hiddenSeatFeatures,
     };
   };
 

@@ -164,7 +164,8 @@ export const JetsTooltipGlobal = ({ data }) => {
     restrictionsLabel = isRestrictionApplied ? `${LOCALES_MAP[lang][RESTRICTION_KEY]}: ${typeStrings.join(', ')}` : '';
   }
 
-  const finalListOfFeatures = [...(features || []), ...(additionalProps || [])].slice(0, DEFAULT_FEATURES_RENDER_LIMIT);
+  const filteredFeatures = (features || []).filter(f => !params.hiddenSeatFeatures.includes(f.key));
+  const finalListOfFeatures = [...filteredFeatures, ...(additionalProps || [])].slice(0, DEFAULT_FEATURES_RENDER_LIMIT);
 
   return (
     <div
